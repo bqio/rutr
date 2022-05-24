@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "rutr/static/css/main.dde37768.css",
-    "main.js": "rutr/static/js/main.c767d993.js",
-    "index.html": "rutr/index.html",
-    "main.dde37768.css.map": "rutr/static/css/main.dde37768.css.map",
-    "main.c767d993.js.map": "rutr/static/js/main.c767d993.js.map"
+    "main.css": "./static/css/main.dde37768.css",
+    "main.js": "./static/js/main.c767d993.js",
+    "index.html": "./index.html",
+    "main.dde37768.css.map": "./static/css/main.dde37768.css.map",
+    "main.c767d993.js.map": "./static/js/main.c767d993.js.map"
   },
   "entrypoints": [
     "static/css/main.dde37768.css",
