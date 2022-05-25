@@ -10,6 +10,18 @@
 <body>
   <div id="app">
     <div v-cloak>
+      <div class="sort-wrapper">
+          Sort by
+          <select v-model="sortField">
+            <option value="title">Title</option>
+            <option value="size">Size</option>
+            <option value="date">Date</option>
+          </select>
+          <select v-model="order">
+            <option value="asc">ASC</option>
+            <option value="desc">DESC</option>
+          </select>
+      </div>
       <table>
         <thead>
           <th>Title</th>
@@ -17,7 +29,7 @@
           <th>Date</th>
         </thead>
         <tbody>
-          <tr v-for="torrent of torrents">
+          <tr v-for="torrent of sortedTitles">
             <td>
               <a v-if="!isNx" class="link" :href="`magnet:?xt=urn:btih:${torrent.magnet}`">
                 {{torrent.title}}
