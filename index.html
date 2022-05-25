@@ -1,1 +1,41 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="./favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="./logo192.png"/><link rel="manifest" href="./manifest.json"/><title>01.05.2022</title><script defer="defer" src="./static/js/main.c767d993.js"></script><link href="./static/css/main.dde37768.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>01.05.22</title>
+</head>
+<body>
+  <div id="app">
+    <div v-cloak>
+      <table>
+        <thead>
+          <th>Title</th>
+          <th>Size</th>
+          <th>Date</th>
+        </thead>
+        <tbody>
+          <tr v-for="torrent of torrents">
+            <td>
+              <a v-if="!isNx" class="link" :href="`magnet:?xt=urn:btih:${torrent.magnet}`">
+                {{torrent.title}}
+              </a>
+              <span v-else class="nx-link" @click="sendMessage(`magnet:?xt=urn:btih:${torrent.magnet}`)">{{torrent.title}}</span>
+            </td>
+            <td>
+              {{gb(torrent.size_b)}}
+            </td>
+            <td>
+              {{new Date(torrent.date).toLocaleDateString()}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="app.js"></script>
+</body>
+</html>
